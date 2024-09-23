@@ -1,17 +1,13 @@
 package com.security.identity_service.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import jakarta.annotation.Nullable;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Data
-@AllArgsConstructor@NoArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class UserCredential {
 
@@ -21,4 +17,38 @@ public class UserCredential {
     private String name;
     private String email;
     private String password;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "UserCredential{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

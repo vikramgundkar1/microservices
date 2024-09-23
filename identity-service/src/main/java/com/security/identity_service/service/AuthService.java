@@ -18,8 +18,6 @@ public class AuthService {
     @Autowired
     private JwtService jwtService;
 
-
-
     public String  saveUser(UserCredential userCredential)
     {
 
@@ -30,14 +28,11 @@ public class AuthService {
         return "Saved User";
     }
 
-
     public String generateToken(String name){
         return jwtService.generateToken(name);
 
 
     }
-
-
 
     public void  validateToken(String token)
     {

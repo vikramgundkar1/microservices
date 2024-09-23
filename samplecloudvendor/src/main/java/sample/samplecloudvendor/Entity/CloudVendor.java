@@ -13,60 +13,62 @@ public class CloudVendor {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
-    private String fistName;
-    private String lastName;
-    private String designation;
-
-
-    public CloudVendor(int id, String fistName, String lastName, String designation) {
-        this.id = id;
-        this.fistName = fistName;
-        this.lastName = lastName;
-        this.designation = designation;
-    }
+    private String vendorName;
+    private String vendorCode;
+    private String region;
+    private String cost;
 
     public CloudVendor() {
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
+    public CloudVendor(int id, String vendorName, String vendorCode, String region, String cost) {
         this.id = id;
+        this.vendorName = vendorName;
+        this.vendorCode = vendorCode;
+        this.region = region;
+        this.cost = cost;
     }
 
-    public String getFistName() {
-        return fistName;
+    public String getVendorName() {
+        return vendorName;
     }
 
-    public void setFistName(String fistName) {
-        this.fistName = fistName;
+    public void setVendorName(String vendorName) {
+        this.vendorName = vendorName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getVendorCode() {
+        return vendorCode;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setVendorCode(String vendorCode) {
+        this.vendorCode = vendorCode;
     }
 
-    public String getDesignation() {
-        return designation;
+    public String getRegion() {
+        return region;
     }
 
-    public void setDesignation(String designation) {
-        this.designation = designation;
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public String getCost() {
+        return cost;
+    }
+
+    public void setCost(String cost) {
+        this.cost = cost;
     }
 
     @Override
     public String toString() {
         return "CloudVendor{" +
                 "id=" + id +
-                ", fistName='" + fistName + '\'' +
-                ", LastName='" + lastName + '\'' +
-                ", Designation='" + designation + '\'' +
+                ", vendorName='" + vendorName + '\'' +
+                ", vednorCode='" + vendorCode + '\'' +
+                ", region='" + region + '\'' +
+                ", cost='" + cost + '\'' +
                 '}';
     }
 }

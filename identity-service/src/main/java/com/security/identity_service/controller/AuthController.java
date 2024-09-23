@@ -20,13 +20,13 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
 
     @PostMapping("/register")
-    public String  addUser(UserCredential user)
+    public String  addUser(@RequestBody  UserCredential user)
     {
         authService.saveUser(user);
         return "User Created";
     }
 
-    @GetMapping("/token")
+    @PostMapping("/token")
     public String getToken(@RequestBody AuthRequest authRequest)
     {
 
@@ -41,8 +41,8 @@ public class AuthController {
         }
     }
 
-    @PostMapping("/validate")
-    public String validateToken(String  token)
+    @GetMapping("/validate")
+    public String validateToken(@RequestParam("token") String  token)
     {
          authService.validateToken(token);
         return "Token is valid";
