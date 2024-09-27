@@ -17,7 +17,6 @@ public class CloudVendor {
     private String vendorCode;
     private String region;
     private String cost;
-
     public CloudVendor() {
     }
 

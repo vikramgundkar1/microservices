@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: service-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: SAMPLE-CLOUD
+          uri: lb://SAMPLE-CLOUD
+          predicates:
+            - Path=/cloudvendor/**
+
+        - id: IDENTITY-SERVICE
+          uri: lb://IDENTITY-SERVICE
+          predicates:
+            - Path=/auth/**
+server:
+  port: 8888
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone:
+        http://localhost:8761/eureka
